@@ -1,6 +1,6 @@
 import TrackImg from "../assets/Track.jpg";
 import JustHomeImg from "../assets/justhome.png";
-import BabaVee from "../assets/BabaVee.png";
+import BabaVee from "../assets/babavee.png";
 
 export const projects = [
   {
