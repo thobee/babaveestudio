@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, ArrowRight } from "lucide-react";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 /* ── WhatsApp brand SVG icon ── */
 const WhatsAppIcon = ({ size = 16, color = "#fff" }) => (
@@ -56,11 +57,24 @@ export const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name:  formData.name,
+          from_email: formData.email,
+          phone:      formData.phone,
+          subject:    formData.subject,
+          message:    formData.message,
+          to_email:   "babaveetech@gmail.com",
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
       setSubmitStatus("success");
       setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
       setTimeout(() => setSubmitStatus(null), 5000);
-    } catch {
+    } catch (err) {
+      console.error("EmailJS error:", err);
       setSubmitStatus("error");
       setTimeout(() => setSubmitStatus(null), 5000);
     } finally {
