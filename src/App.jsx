@@ -1,46 +1,60 @@
 import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
 import { Hero } from "./components/sections/Hero";
-
 import { Services } from "./components/sections/Services";
-
-
 import { WhyUs } from "./components/sections/WhyUs";
 import { TechStack } from "./components/sections/TechStack";
 import { Portfolio } from "./components/sections/Portfolio";
-
 import { Testimonials } from "./components/sections/Testimonials";
 import { FAQ } from "./components/sections/FAQ";
 import { Contact } from "./components/sections/Contact";
-
 import { MessageCircle } from "lucide-react";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { CTABanner } from "./components/sections/Ctabanner";
+import Lenis from "lenis";
 
 function App() {
-  // Smooth scroll behavior for anchor links
+  const lenisRef = useRef(null);
+
   useEffect(() => {
-    const handleAnchorClick = function (e) {
+    // ── Initialise Lenis smooth scroll ──
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true,
+      smoothTouch: false, // native on mobile
+    });
+
+    lenisRef.current = lenis;
+
+    // RAF loop — drive Lenis every frame
+    let rafId;
+    function raf(time) {
+      lenis.raf(time);
+      rafId = requestAnimationFrame(raf);
+    }
+    rafId = requestAnimationFrame(raf);
+
+    // Intercept anchor clicks so they scroll through Lenis
+    function handleAnchorClick(e) {
       const href = this.getAttribute("href");
       if (href && href.startsWith("#") && href.length > 1) {
         e.preventDefault();
-        const el = document.querySelector(href);
-        if (el) {
-          el.scrollIntoView({
-            behavior: "smooth",
-          });
-        }
+        const target = document.querySelector(href);
+        if (target) lenis.scrollTo(target, { offset: 0 });
       }
-    };
+    }
 
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", handleAnchorClick);
-    });
+    document.querySelectorAll('a[href^="#"]').forEach((a) =>
+      a.addEventListener("click", handleAnchorClick)
+    );
 
     return () => {
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.removeEventListener("click", handleAnchorClick);
-      });
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
+      document.querySelectorAll('a[href^="#"]').forEach((a) =>
+        a.removeEventListener("click", handleAnchorClick)
+      );
     };
   }, []);
 

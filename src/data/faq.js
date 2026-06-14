@@ -17,7 +17,7 @@ export const faqs = [
   {
     id: 4,
     question: 'What are other services that you offer?',
-    answer: 'As the number 1 web design company in Lagos, we also offer other digital services: SEO, Shopify Store Design, Graphics Design, Mobile App Development, Social Media Management, Content Management, e.t.c'
+    answer: 'As the number 1 web design company in Lagos & Abuja, we also offer other digital services: SEO, Shopify Store Design, Graphics Design, Mobile App Development, Social Media Management, Content Management, e.t.c'
   },
   {
     id: 5,
