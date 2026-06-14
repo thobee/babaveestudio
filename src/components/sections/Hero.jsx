@@ -113,10 +113,11 @@ const GradientBars = () => (
                 height: "100%",
                 background: "linear-gradient(to top, rgb(255, 80, 0), transparent)",
                 transformOrigin: "bottom",
-                animation: `pulseBar 2.1s ease-in-out infinite alternate`,
+                animation: `pulseBar 3s ease-in-out infinite alternate`,
                 animationDelay: `${index * 0.085}s`,
                 "--initial-scale": scale,
                 transform: `scaleY(${scale})`,
+                willChange: "transform",
               }}
             />
           );

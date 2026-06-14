@@ -129,7 +129,7 @@ export const Services = () => {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
             className="sm:col-span-2 lg:col-span-8 group relative flex flex-col bg-[#f8f9fb] border border-[#e4e7eb] rounded-2xl overflow-hidden
               hover:bg-white hover:border-[#0EA5E9]/40 hover:shadow-[0_20px_60px_rgba(14,165,233,0.14)] transition-all duration-500"
@@ -199,7 +199,7 @@ export const Services = () => {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.65, delay: 0.07, ease: [0.22, 1, 0.36, 1] }}
             className="sm:col-span-1 lg:col-span-4 group relative flex flex-col bg-[#f8f9fb] border border-[#e4e7eb] rounded-2xl overflow-hidden
               hover:bg-white hover:border-[#FF6B2B]/40 hover:shadow-[0_20px_60px_rgba(255,107,43,0.12)] transition-all duration-500"
@@ -250,7 +250,7 @@ export const Services = () => {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.65, delay: 0.13, ease: [0.22, 1, 0.36, 1] }}
             className="sm:col-span-1 lg:col-span-4 group relative flex flex-col bg-[#f8f9fb] border border-[#e4e7eb] rounded-2xl overflow-hidden
               hover:bg-white hover:border-[#A855F7]/40 hover:shadow-[0_20px_60px_rgba(168,85,247,0.12)] transition-all duration-500"
@@ -301,7 +301,7 @@ export const Services = () => {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.65, delay: 0.19, ease: [0.22, 1, 0.36, 1] }}
             className="sm:col-span-2 lg:col-span-8 group relative flex flex-col bg-[#f8f9fb] border border-[#e4e7eb] rounded-2xl overflow-hidden
               hover:bg-white hover:border-[#F59E0B]/40 hover:shadow-[0_20px_60px_rgba(245,158,11,0.12)] transition-all duration-500"
@@ -384,7 +384,7 @@ export const Services = () => {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.65, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
             className="sm:col-span-2 lg:col-span-12 group relative flex flex-col bg-[#f8f9fb] border border-[#e4e7eb] rounded-2xl overflow-hidden
               hover:bg-white hover:border-[#EF4444]/35 hover:shadow-[0_20px_60px_rgba(239,68,68,0.1)] transition-all duration-500"
