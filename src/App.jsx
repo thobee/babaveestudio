@@ -1,17 +1,17 @@
 import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
 import { Hero } from "./components/sections/Hero";
-import { Stats } from "./components/sections/Stats";
+
 import { Services } from "./components/sections/Services";
-import { HowItWorks } from "./components/sections/HowItWorks";
+
 
 import { WhyUs } from "./components/sections/WhyUs";
 import { TechStack } from "./components/sections/TechStack";
 import { Portfolio } from "./components/sections/Portfolio";
-import { Blog } from "./components/sections/Blog";
+
 import { Testimonials } from "./components/sections/Testimonials";
-import { About } from "./components/sections/About";
 import { FAQ } from "./components/sections/FAQ";
+import { Contact } from "./components/sections/Contact";
 
 import { MessageCircle } from "lucide-react";
 import { useEffect } from "react";
@@ -22,7 +22,7 @@ function App() {
   useEffect(() => {
     const handleAnchorClick = function (e) {
       const href = this.getAttribute("href");
-      if (href.startsWith("#")) {
+      if (href && href.startsWith("#") && href.length > 1) {
         e.preventDefault();
         const el = document.querySelector(href);
         if (el) {
@@ -50,16 +50,19 @@ function App() {
 
       <main>
         <Hero />
-        <Stats />
         <WhyUs />
+      
         <Services />
         <TechStack />
 
         <Portfolio />
-        <Blog />
+
         <Testimonials />
 
+
         <FAQ />
+
+        <Contact />
       </main>
       <CTABanner />
       <Footer />

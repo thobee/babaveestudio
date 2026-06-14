@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://babaveestudio.vercel.app/sitemap.xml

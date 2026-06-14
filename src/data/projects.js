@@ -1,5 +1,6 @@
 import TrackImg from "../assets/Track.jpg";
 import JustHomeImg from "../assets/justhome.png";
+import BabaVee from "../assets/BabaVee.png";
 
 export const projects = [
   {
@@ -9,7 +10,7 @@ export const projects = [
       "A modern landing page for tracking project progress with real-time updates and analytics.",
     image: TrackImg,
     tags: ["React", "Tailwind CSS", "Chart.js", "Node.js"],
-    link: "#",
+    link: "https://trackprogress-ten.vercel.app/",
   },
   {
     id: 2,
@@ -18,15 +19,15 @@ export const projects = [
       "High-conversion online store with advanced filtering, cart management, and payment integration.",
     image: JustHomeImg,
     tags: ["Next.js", "Stripe", "MongoDB", "Tailwind CSS"],
-    link: "#",
+    link: "https://justhome-estate.vercel.app/",
   },
   {
     id: 3,
-    title: "Health & Wellness App",
+    title: "BabaVee Studio agency website",
     description:
-      "A responsive web app for fitness tracking, scheduling, and community engagement.",
-    image: "https://placehold.co/600x400/1A2B45/FFFFFF.png?text=Health+App",
-    tags: ["React Native", "Firebase", "Redux"],
-    link: "#",
+      "A sleek and modern website for BabaVee Studio, showcasing portfolio, services, and team.",
+    image: BabaVee,
+    tags: ["React", "Framer Motion", "Tailwind CSS"],
+    link: "https://babaveestudio.vercel.app/",
   },
 ];

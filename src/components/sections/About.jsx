@@ -50,7 +50,7 @@ export const About = () => {
             <div className="relative rounded-2xl overflow-hidden aspect-square md:aspect-[4/3] lg:aspect-square border border-white/10 glass-card">
               <div className="absolute inset-0 bg-gradient-to-tr from-brand-orange/20 to-brand-blue mix-blend-overlay z-10"></div>
               <img 
-                src="https://placehold.co/800x800/1A2B45/FFFFFF.png?text=Agency+Team" 
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80&auto=format&fit=crop" 
                 alt="BabaVee Studio Team" 
                 className="w-full h-full object-cover"
               />

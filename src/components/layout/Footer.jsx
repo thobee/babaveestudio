@@ -138,7 +138,7 @@ export const Footer = () => {
             <ul className="space-y-4 font-sans text-[14px] text-gray-400">
               <li>
                 <a
-                  href="#"
+                  href="#services"
                   className="hover:text-brand-orange transition-colors"
                 >
                   Web Development
@@ -146,7 +146,7 @@ export const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#services"
                   className="hover:text-brand-orange transition-colors"
                 >
                   UI/UX Design
@@ -154,7 +154,7 @@ export const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#services"
                   className="hover:text-brand-orange transition-colors"
                 >
                   E-Commerce
@@ -162,7 +162,7 @@ export const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#services"
                   className="hover:text-brand-orange transition-colors"
                 >
                   Mobile Apps
@@ -171,6 +171,7 @@ export const Footer = () => {
             </ul>
           </div>
 
+
           {/* Contact Info */}
           <div>
             <h4 className="font-syne font-bold text-lg text-white mb-6">
@@ -178,18 +179,27 @@ export const Footer = () => {
             </h4>
             <ul className="space-y-4 font-sans text-[14px] text-gray-400">
               <li>
-                <a className="hover:text-brand-orange transition-colors">
+                <a
+                  href="mailto:babaveetech@gmail.com"
+                  className="hover:text-brand-orange transition-colors"
+                >
                   babaveetech@gmail.com
                 </a>
               </li>
               <li>
-                <a className="hover:text-brand-orange transition-colors">
+                <a
+                  href="https://wa.me/2348102877413?text=Hi%20BabaVee%20Studio%2C%20I%27d%20like%20to%20discuss%20a%20project!"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-brand-orange transition-colors"
+                >
                   +234 810 287 7413
                 </a>
               </li>
               <li>Lagos, Nigeria</li>
             </ul>
           </div>
+
         </div>
 
         {/* Copyright */}
