@@ -41,6 +41,8 @@ const FloatingPill = ({ text, bgColor, textColor, position, delay = 0 }) => (
         boxShadow: bgColor.includes("ff6b35")
           ? "0 0 30px rgba(255,107,53,0.35)"
           : "0 4px 15px rgba(0,0,0,0.2)",
+        WebkitBackfaceVisibility: "hidden",
+        transform: "translateZ(0)",
       }}
     >
       <span>{text}</span>
@@ -88,12 +90,12 @@ const GradientBars = () => (
   <>
     <style>{`
       @keyframes pulseBar {
-        0%   { transform: scaleY(var(--initial-scale)); }
-        100% { transform: scaleY(calc(var(--initial-scale) * 0.72)); }
+        0%   { transform: scaleY(var(--initial-scale)) translateZ(0); }
+        100% { transform: scaleY(calc(var(--initial-scale) * 0.72)) translateZ(0); }
       }
       @keyframes float-pill {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-14px); }
+        0%, 100% { transform: translateY(0px) translateZ(0); }
+        50% { transform: translateY(-14px) translateZ(0); }
       }
     `}</style>
 
@@ -111,13 +113,16 @@ const GradientBars = () => (
               style={{
                 flex: `1 0 calc(100% / 13)`,
                 height: "100%",
-                background: "linear-gradient(to top, rgb(255, 80, 0), transparent)",
+                background:
+                  "linear-gradient(to top, rgb(255, 80, 0), transparent)",
                 transformOrigin: "bottom",
                 animation: `pulseBar 3s ease-in-out infinite alternate`,
                 animationDelay: `${index * 0.085}s`,
                 "--initial-scale": scale,
-                transform: `scaleY(${scale})`,
+                transform: `scaleY(${scale}) translateZ(0)`,
                 willChange: "transform",
+                backfaceVisibility: "hidden",
+                WebkitBackfaceVisibility: "hidden",
               }}
             />
           );
@@ -128,14 +133,15 @@ const GradientBars = () => (
 );
 
 export const Hero = () => (
-  <section className="relative min-h-screen overflow-hidden bg-[#0a0a0a] text-white flex flex-col">
+  <section className="relative min-h-[100dvh] overflow-hidden bg-[#0a0a0a] text-white flex flex-col">
     <GradientBars />
 
     {/* Overlays */}
     <div
       className="absolute inset-0 z-[1] pointer-events-none"
       style={{
-        background: "radial-gradient(ellipse 75% 85% at 50% 38%, rgba(10,10,10,0.88) 0%, rgba(10,10,10,0.55) 58%, transparent 100%)",
+        background:
+          "radial-gradient(ellipse 75% 85% at 50% 38%, rgba(10,10,10,0.88) 0%, rgba(10,10,10,0.55) 58%, transparent 100%)",
       }}
     />
 
@@ -195,14 +201,32 @@ export const Hero = () => (
                   </span>
 
                   {/* Spinning Ring */}
-                  <a href="#contact" className="group relative shrink-0 self-center">
+                  <a
+                    href="#contact"
+                    className="group relative shrink-0 self-center"
+                  >
                     <div className="relative w-[68px] h-[68px] sm:w-[78px] sm:h-[78px] md:w-[90px] md:h-[90px]">
-                      <svg className="w-full h-full animate-spin" style={{ animationDuration: "13s" }} viewBox="0 0 90 90">
+                      <svg
+                        className="w-full h-full animate-spin"
+                        style={{ animationDuration: "13s" }}
+                        viewBox="0 0 90 90"
+                      >
                         <defs>
-                          <path id="ring" d="M45,45 m-33,0 a33,33 0 1,1 66,0 a33,33 0 1,1,-66,0" />
+                          <path
+                            id="ring"
+                            d="M45,45 m-33,0 a33,33 0 1,1 66,0 a33,33 0 1,1,-66,0"
+                          />
                         </defs>
-                        <text fontSize="8.2" fill="rgba(255,255,255,0.45)" letterSpacing="3.5" fontFamily="monospace" fontWeight="700">
-                          <textPath href="#ring">BABAVEE STUDIO · LAGOS · </textPath>
+                        <text
+                          fontSize="8.2"
+                          fill="rgba(255,255,255,0.45)"
+                          letterSpacing="3.5"
+                          fontFamily="monospace"
+                          fontWeight="700"
+                        >
+                          <textPath href="#ring">
+                            BABAVEE STUDIO · LAGOS ·{" "}
+                          </textPath>
                         </text>
                       </svg>
                       <div className="absolute inset-0 flex items-center justify-center">
@@ -218,8 +242,11 @@ export const Hero = () => (
               {/* Description */}
               <motion.div variants={fadeIn} className="max-w-[540px] px-2">
                 <p className="font-syne text-white/90 leading-relaxed text-center text-[0.95rem] sm:text-base md:text-[1.05rem]">
-                  We design exceptional brands, products, web apps, and mobile apps for startups and enterprises across{" "}
-                  <span className="text-white font-semibold">Nigeria and beyond.</span>
+                  We design exceptional brands, products, web apps, and mobile
+                  apps for startups and enterprises across{" "}
+                  <span className="text-white font-semibold">
+                    Nigeria and beyond.
+                  </span>
                 </p>
               </motion.div>
             </motion.div>
@@ -261,8 +288,12 @@ export const Hero = () => (
               href="#contact"
               className="group relative inline-flex items-center gap-3 px-6 py-3.5 rounded-full text-white font-medium text-sm md:text-base transition-all duration-500 overflow-hidden border border-white/30 hover:border-white/50"
               style={{
-                background: "linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.05) 100%)",
+                background:
+                  "linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.05) 100%)",
                 backdropFilter: "blur(14px)",
+                WebkitBackdropFilter: "blur(14px)",
+                WebkitBackfaceVisibility: "hidden",
+                transform: "translateZ(0)",
               }}
             >
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 -skew-x-12 -translate-x-full group-hover:translate-x-full" />

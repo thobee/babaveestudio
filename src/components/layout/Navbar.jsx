@@ -14,14 +14,16 @@ export const Navbar = () => {
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "unset";
-    return () => { document.body.style.overflow = "unset"; };
+    return () => {
+      document.body.style.overflow = "unset";
+    };
   }, [isOpen]);
 
   const navLinks = [
-    { name: "About",    href: "#whyus"    },
+    { name: "About", href: "#whyus" },
     { name: "Services", href: "#services" },
-    { name: "Work",     href: "#work"     },
-    { name: "FAQ",      href: "#faq"      },
+    { name: "Work", href: "#work" },
+    { name: "FAQ", href: "#faq" },
   ];
 
   return (
@@ -31,6 +33,10 @@ export const Navbar = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         className="fixed w-full z-50 top-0"
+        style={{
+          WebkitBackfaceVisibility: "hidden",
+          backfaceVisibility: "hidden",
+        }}
       >
         <div
           className={`w-full max-w-[1280px] mx-auto transition-all duration-500 ${
@@ -50,8 +56,12 @@ export const Navbar = () => {
               className="flex items-baseline gap-1.5 font-syne font-extrabold text-[1.2rem] sm:text-xl lg:text-2xl text-white tracking-[-0.04em] group z-40 relative shrink-0"
             >
               <span>BabaVee</span>
-              <span className="text-[#ff6b35] leading-none drop-shadow-[0_0_10px_rgba(255,107,43,0.5)] group-hover:drop-shadow-[0_0_22px_rgba(255,107,43,0.8)] transition-all duration-300">.</span>
-              <span className="hidden sm:block font-sans text-xs sm:text-sm font-bold text-white/55 tracking-normal leading-none ml-0.5">Studio</span>
+              <span className="text-[#ff6b35] leading-none drop-shadow-[0_0_10px_rgba(255,107,43,0.5)] group-hover:drop-shadow-[0_0_22px_rgba(255,107,43,0.8)] transition-all duration-300">
+                .
+              </span>
+              <span className="hidden sm:block font-sans text-xs sm:text-sm font-bold text-white/55 tracking-normal leading-none ml-0.5">
+                Studio
+              </span>
             </a>
 
             {/* DESKTOP CENTER PILL */}
@@ -77,7 +87,10 @@ export const Navbar = () => {
                   className="group relative inline-flex items-center gap-2 font-sans font-semibold text-[13px] bg-[#ff6b35] text-white px-5 h-9 rounded-full overflow-hidden shadow-[0_0_20px_rgba(255,107,43,0.35)] hover:shadow-[0_0_35px_rgba(255,107,43,0.55)] transition-all duration-300"
                 >
                   <span className="relative z-10">Get in Touch</span>
-                  <ArrowUpRight size={13} className="relative z-10 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+                  <ArrowUpRight
+                    size={13}
+                    className="relative z-10 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 </motion.button>
               </a>
@@ -96,8 +109,15 @@ export const Navbar = () => {
                 onClick={() => setIsOpen(!isOpen)}
                 aria-label="Toggle menu"
               >
-                <motion.div animate={{ rotate: isOpen ? 90 : 0 }} transition={{ duration: 0.3, ease: "backOut" }}>
-                  {isOpen ? <X size={18} className="text-white" /> : <Menu size={18} className="text-white" />}
+                <motion.div
+                  animate={{ rotate: isOpen ? 90 : 0 }}
+                  transition={{ duration: 0.3, ease: "backOut" }}
+                >
+                  {isOpen ? (
+                    <X size={18} className="text-white" />
+                  ) : (
+                    <Menu size={18} className="text-white" />
+                  )}
                 </motion.div>
               </button>
             </div>
@@ -114,6 +134,10 @@ export const Navbar = () => {
             exit={{ opacity: 0, height: 0, y: -10 }}
             transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
             className="md:hidden fixed top-[78px] left-0 right-0 z-40 bg-[#0a0a0a]/95 backdrop-blur-2xl border-b border-white/[0.08] shadow-xl overflow-hidden"
+            style={{
+              WebkitBackfaceVisibility: "hidden",
+              backfaceVisibility: "hidden",
+            }}
           >
             <div className="px-6 py-8 flex flex-col gap-2">
               {navLinks.map((link, i) => (

@@ -82,7 +82,14 @@ const Feature = ({ text, delay }) => (
 );
 
 // ── VALUE CARD ────────────────────────────────────────────────────
-const ValueCard = ({ icon: Icon, title, description, accentColor, delay, index }) => (
+const ValueCard = ({
+  icon: Icon,
+  title,
+  description,
+  accentColor,
+  delay,
+  index,
+}) => (
   <motion.div
     initial={{ opacity: 0, y: 24 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -99,7 +106,9 @@ const ValueCard = ({ icon: Icon, title, description, accentColor, delay, index }
     {/* top accent bar */}
     <div
       className="absolute top-0 left-0 right-0 h-[2px] rounded-t-2xl scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"
-      style={{ background: `linear-gradient(90deg, ${accentColor}, transparent)` }}
+      style={{
+        background: `linear-gradient(90deg, ${accentColor}, transparent)`,
+      }}
     />
 
     {/* number label */}
@@ -112,7 +121,10 @@ const ValueCard = ({ icon: Icon, title, description, accentColor, delay, index }
 
     <div
       className="w-11 h-11 rounded-xl flex items-center justify-center border shrink-0"
-      style={{ background: `${accentColor}18`, borderColor: `${accentColor}35` }}
+      style={{
+        background: `${accentColor}18`,
+        borderColor: `${accentColor}35`,
+      }}
     >
       <Icon size={20} style={{ color: accentColor }} strokeWidth={1.8} />
     </div>
@@ -133,10 +145,15 @@ export const WhyUs = () => {
   const [ref] = useScrollAnimation({ threshold: 0.1 });
 
   const stats = [
-    { icon: Users,  value: "150+", label: "Happy Clients",        color: "#ff6b35" },
-    { icon: Award,  value: "300+", label: "Projects Completed",   color: "#a855f7" },
-    { icon: Clock,  value: "8+",   label: "Years Experience",     color: "#0ea5e9" },
-    { icon: Code2,  value: "25+",  label: "Technologies",         color: "#10b981" },
+    { icon: Users, value: "150+", label: "Happy Clients", color: "#ff6b35" },
+    {
+      icon: Award,
+      value: "300+",
+      label: "Projects Completed",
+      color: "#a855f7",
+    },
+    { icon: Clock, value: "8+", label: "Years Experience", color: "#0ea5e9" },
+    { icon: Code2, value: "25+", label: "Technologies", color: "#10b981" },
   ];
 
   const features = [
@@ -185,13 +202,20 @@ export const WhyUs = () => {
       className="relative py-28 md:py-36 z-10 bg-[#080c14] overflow-hidden border-t border-white/[0.06]"
     >
       {/* ── Background ambient lights ── */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] rounded-full blur-[160px] pointer-events-none opacity-30"
-        style={{ background: "radial-gradient(ellipse, #ff6b3520 0%, transparent 70%)" }} />
-      <div className="absolute bottom-0 right-0 w-[600px] h-[500px] rounded-full blur-[140px] pointer-events-none opacity-20 translate-x-1/3"
-        style={{ background: "radial-gradient(ellipse, #a855f720 0%, transparent 70%)" }} />
+      <div
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] rounded-full blur-[160px] pointer-events-none opacity-30"
+        style={{
+          background: "radial-gradient(ellipse, #ff6b3520 0%, transparent 70%)",
+        }}
+      />
+      <div
+        className="absolute bottom-0 right-0 w-[600px] h-[500px] rounded-full blur-[140px] pointer-events-none opacity-20 translate-x-1/3"
+        style={{
+          background: "radial-gradient(ellipse, #a855f720 0%, transparent 70%)",
+        }}
+      />
 
       <div className="relative z-10 max-w-[1240px] mx-auto px-6 md:px-10">
-
         {/* ══════════════════════════════════
             HEADER
         ══════════════════════════════════ */}
@@ -231,15 +255,18 @@ export const WhyUs = () => {
           </div>
 
           <p className="font-sans text-white/50 text-[15px] leading-[1.8] max-w-sm lg:text-right">
-            A team of specialists who care deeply about design, code quality, and
-            your business outcome — not just deliverables.
+            A team of specialists who care deeply about design, code quality,
+            and your business outcome — not just deliverables.
           </p>
         </motion.div>
 
         {/* ══════════════════════════════════
             STATS ROW
         ══════════════════════════════════ */}
-        <div ref={ref} className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 md:mb-20">
+        <div
+          ref={ref}
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 md:mb-20"
+        >
           {stats.map((s, i) => (
             <StatCard key={i} {...s} delay={i * 0.08} />
           ))}
@@ -249,7 +276,6 @@ export const WhyUs = () => {
             TWO-COLUMN SECTION
         ══════════════════════════════════ */}
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 mb-16 md:mb-20">
-
           {/* LEFT — about text + features */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
@@ -271,13 +297,15 @@ export const WhyUs = () => {
             </h3>
 
             <p className="font-sans text-white/60 text-[15px] leading-[1.85] mb-4">
-              BabaVee Studio is a premium web agency based in Lagos, Nigeria.
-              We work with ambitious founders, growing businesses, and forward-thinking
-              brands to build digital products that actually convert.
+              BabaVee Studio is a premium web agency based in Lagos, Nigeria. We
+              work with ambitious founders, growing businesses, and
+              forward-thinking brands to build digital products that actually
+              convert.
             </p>
             <p className="font-sans text-white/60 text-[15px] leading-[1.85] mb-10">
               Our edge is the rare combination of pixel-perfect design, clean
-              scalable code, and genuine commercial thinking — all under one roof.
+              scalable code, and genuine commercial thinking — all under one
+              roof.
             </p>
 
             {/* feature checklist */}
@@ -289,13 +317,11 @@ export const WhyUs = () => {
 
             {/* CTA */}
             <a
-              href="https://wa.me/2348102877413?text=Hi%20BabaVee%20Studio%2C%20I%27d%20like%20to%20discuss%20a%20project!"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#contact"
               className="group inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-brand-orange text-white font-syne font-semibold text-[13px] hover:shadow-[0_8px_32px_rgba(255,107,43,0.45)] hover:bg-orange-500 transition-all duration-300 self-start"
             >
               <MessageCircle size={16} />
-              Start a Project on WhatsApp
+              Let's Start a Project
               <ArrowRight
                 size={14}
                 className="group-hover:translate-x-1 transition-transform duration-300"
@@ -308,52 +334,89 @@ export const WhyUs = () => {
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+            transition={{
+              duration: 0.6,
+              delay: 0.12,
+              ease: [0.22, 1, 0.36, 1],
+            }}
             className="flex-1 flex flex-col justify-center"
           >
             {/* big quote / highlight card */}
             <div className="relative rounded-3xl overflow-hidden border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-transparent p-8 md:p-10">
               {/* accent glow */}
-              <div className="absolute inset-0 pointer-events-none"
-                style={{ background: "radial-gradient(ellipse 80% 60% at 50% 100%, rgba(255,107,43,0.12) 0%, transparent 70%)" }} />
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background:
+                    "radial-gradient(ellipse 80% 60% at 50% 100%, rgba(255,107,43,0.12) 0%, transparent 70%)",
+                }}
+              />
 
               <span className="font-syne font-black text-[7rem] md:text-[9rem] leading-none text-brand-orange/10 select-none block -mt-4 -ml-2">
                 "
               </span>
 
-              <blockquote className="font-syne font-light text-white/90 leading-[1.6] -mt-10 mb-8 relative z-10"
-                style={{ fontSize: "clamp(1.15rem, 2vw, 1.4rem)" }}>
-                We treat your business like our own — with the same urgency, care, and standards we'd hold ourselves to.
+              <blockquote
+                className="font-syne font-light text-white/90 leading-[1.6] -mt-10 mb-8 relative z-10"
+                style={{ fontSize: "clamp(1.15rem, 2vw, 1.4rem)" }}
+              >
+                We treat your business like our own — with the same urgency,
+                care, and standards we'd hold ourselves to.
               </blockquote>
 
               <div className="flex items-center gap-4 relative z-10">
                 {/* gradient ring avatar */}
-                <div className="shrink-0 p-[2px] rounded-full" style={{ background: "linear-gradient(135deg, #ff6b35, #a855f7)" }}>
+                <div
+                  className="shrink-0 p-[2px] rounded-full"
+                  style={{
+                    background: "linear-gradient(135deg, #ff6b35, #a855f7)",
+                  }}
+                >
                   <div className="w-10 h-10 rounded-full bg-[#0d1117] flex items-center justify-center font-syne font-black text-white text-[13px] tracking-wide">
                     BV
                   </div>
                 </div>
                 <div>
-                  <p className="font-syne font-semibold text-white text-[14px]">BabaVee Studio</p>
-                  <p className="font-sans text-white/40 text-[12px]">Lagos, Nigeria · Since 2023</p>
+                  <p className="font-syne font-semibold text-white text-[14px]">
+                    BabaVee Studio
+                  </p>
+                  <p className="font-sans text-white/40 text-[12px]">
+                    Lagos, Nigeria · Since 2023
+                  </p>
                 </div>
               </div>
 
               {/* deco horizontal line */}
               <div className="mt-8 pt-8 border-t border-white/[0.08] grid grid-cols-3 gap-4 relative z-10">
                 {[
-                  { icon: Trophy,   color: "#f59e0b", label: "Award-winning quality" },
-                  { icon: Rocket,   color: "#0ea5e9", label: "Fast turnaround" },
-                  { icon: ThumbsUp, color: "#10b981", label: "100% satisfaction" },
+                  {
+                    icon: Trophy,
+                    color: "#f59e0b",
+                    label: "Award-winning quality",
+                  },
+                  { icon: Rocket, color: "#0ea5e9", label: "Fast turnaround" },
+                  {
+                    icon: ThumbsUp,
+                    color: "#10b981",
+                    label: "100% satisfaction",
+                  },
                 ].map(({ icon: Ico, color, label }, i) => (
-                  <div key={i} className="flex flex-col items-center text-center gap-2">
+                  <div
+                    key={i}
+                    className="flex flex-col items-center text-center gap-2"
+                  >
                     <div
                       className="w-9 h-9 rounded-xl flex items-center justify-center border"
-                      style={{ background: `${color}15`, borderColor: `${color}30` }}
+                      style={{
+                        background: `${color}15`,
+                        borderColor: `${color}30`,
+                      }}
                     >
                       <Ico size={16} style={{ color }} strokeWidth={1.8} />
                     </div>
-                    <span className="font-sans text-white/50 text-[11px] leading-snug">{label}</span>
+                    <span className="font-sans text-white/50 text-[11px] leading-snug">
+                      {label}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -381,7 +444,6 @@ export const WhyUs = () => {
             <ValueCard key={i} {...v} delay={i * 0.08} index={i} />
           ))}
         </div>
-
       </div>
     </section>
   );
