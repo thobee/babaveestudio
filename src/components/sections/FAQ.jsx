@@ -32,7 +32,13 @@ export const FAQ = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-brand-orange/[0.03] rounded-full blur-[120px] pointer-events-none" />
+      <div
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-brand-orange/[0.03] rounded-full blur-[120px] pointer-events-none"
+        style={{
+          WebkitBackfaceVisibility: "hidden",
+          transform: "translateZ(0)",
+        }}
+      />
 
       <div className="max-w-[1100px] mx-auto px-5 md:px-8 relative z-10">
         {/* Header */}

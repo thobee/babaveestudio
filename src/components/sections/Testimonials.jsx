@@ -8,15 +8,18 @@ export const Testimonials = () => {
 
   return (
     <section className="py-28 relative z-10 bg-white overflow-hidden border-t border-black/[0.06]">
-
       {/* Subtle background texture */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(255,107,43,0.05) 0%, transparent 70%)" }}
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(255,107,43,0.05) 0%, transparent 70%)",
+          WebkitBackfaceVisibility: "hidden",
+          transform: "translateZ(0)",
+        }}
       />
 
       <div className="max-w-[1200px] mx-auto px-6 md:px-10 relative z-10">
-
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -34,12 +37,16 @@ export const Testimonials = () => {
             </div>
             <h2
               className="font-syne font-extrabold text-gray-900 tracking-tight"
-              style={{ fontSize: "clamp(1.9rem, 4vw, 2.8rem)", lineHeight: 1.1 }}
+              style={{
+                fontSize: "clamp(1.9rem, 4vw, 2.8rem)",
+                lineHeight: 1.1,
+              }}
             >
               What Our Clients Say
             </h2>
             <p className="font-sans text-gray-400 text-[14px] mt-3 max-w-[420px] leading-relaxed">
-              Don't take our word for it — hear directly from the people we've worked with.
+              Don't take our word for it — hear directly from the people we've
+              worked with.
             </p>
           </div>
 
@@ -53,10 +60,17 @@ export const Testimonials = () => {
           >
             <div className="flex gap-0.5">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} size={13} fill="#FF6B2B" className="text-brand-orange" />
+                <Star
+                  key={i}
+                  size={13}
+                  fill="#FF6B2B"
+                  className="text-brand-orange"
+                />
               ))}
             </div>
-            <span className="font-syne font-bold text-gray-800 text-[13px]">5.0</span>
+            <span className="font-syne font-bold text-gray-800 text-[13px]">
+              5.0
+            </span>
             <span className="font-sans text-gray-400 text-[12px]">
               from {testimonials.length}+ reviews
             </span>
@@ -64,7 +78,10 @@ export const Testimonials = () => {
         </motion.div>
 
         {/* Cards grid */}
-        <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div
+          ref={ref}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+        >
           {testimonials.map((t, i) => (
             <motion.div
               key={i}
@@ -75,29 +92,18 @@ export const Testimonials = () => {
                 delay: i * 0.1,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="flex flex-col rounded-2xl overflow-hidden transition-all duration-300 cursor-default"
-              style={{
-                background: "#fff",
-                border: "1px solid rgba(0,0,0,0.07)",
-                boxShadow: "0 1px 6px rgba(0,0,0,0.05)",
-                padding: "28px",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = "0 16px 48px rgba(0,0,0,0.1)";
-                e.currentTarget.style.transform = "translateY(-4px)";
-                e.currentTarget.style.borderColor = "rgba(255,107,43,0.22)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = "0 1px 6px rgba(0,0,0,0.05)";
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.borderColor = "rgba(0,0,0,0.07)";
-              }}
+              className="flex flex-col rounded-2xl overflow-hidden transition-all duration-300 cursor-default bg-white border border-black/[0.07] shadow-sm p-7 hover:-translate-y-1 hover:shadow-2xl hover:border-brand-orange/20"
             >
               {/* Top row: stars + quote icon */}
               <div className="flex items-center justify-between mb-5">
                 <div className="flex gap-0.5">
                   {[...Array(5)].map((_, s) => (
-                    <Star key={s} size={12} fill="#FF6B2B" className="text-brand-orange" />
+                    <Star
+                      key={s}
+                      size={12}
+                      fill="#FF6B2B"
+                      className="text-brand-orange"
+                    />
                   ))}
                 </div>
                 <div
@@ -135,18 +141,31 @@ export const Testimonials = () => {
                   }}
                 >
                   {t.image ? (
-                    <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
+                    <img
+                      src={t.image}
+                      alt={t.name}
+                      className="w-full h-full object-cover"
+                    />
                   ) : (
-                    <span className="font-syne font-bold text-brand-orange" style={{ fontSize: "15px" }}>
+                    <span
+                      className="font-syne font-bold text-brand-orange"
+                      style={{ fontSize: "15px" }}
+                    >
                       {t.name.charAt(0)}
                     </span>
                   )}
                 </div>
                 <div>
-                  <h4 className="font-syne font-bold text-gray-900" style={{ fontSize: "13.5px" }}>
+                  <h4
+                    className="font-syne font-bold text-gray-900"
+                    style={{ fontSize: "13.5px" }}
+                  >
                     {t.name}
                   </h4>
-                  <p className="font-sans text-gray-400 mt-0.5" style={{ fontSize: "12px" }}>
+                  <p
+                    className="font-sans text-gray-400 mt-0.5"
+                    style={{ fontSize: "12px" }}
+                  >
                     {t.role}
                   </p>
                 </div>
@@ -154,7 +173,6 @@ export const Testimonials = () => {
             </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );

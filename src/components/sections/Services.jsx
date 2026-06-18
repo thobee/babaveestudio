@@ -11,7 +11,13 @@ const services = [
     title: "Web Development",
     description:
       "We engineer blazing-fast, responsive websites and progressive web apps that turn visitors into loyal customers. From landing pages to complex SaaS platforms, every line of code is built for scale.",
-    features: ["Responsive Design", "Progressive Web Apps", "E-Commerce Platforms", "Performance Tuning", "SEO Architecture"],
+    features: [
+      "Responsive Design",
+      "Progressive Web Apps",
+      "E-Commerce Platforms",
+      "Performance Tuning",
+      "SEO Architecture",
+    ],
   },
   {
     num: "02",
@@ -22,7 +28,13 @@ const services = [
     title: "App Development",
     description:
       "Native iOS and Android experiences built with React Native and Flutter. We craft apps that feel intuitive, load instantly, and keep users coming back.",
-    features: ["iOS & Android Native", "Cross-Platform (Flutter)", "App Store Optimisation", "Real-Time Sync", "Push Notifications"],
+    features: [
+      "iOS & Android Native",
+      "Cross-Platform (Flutter)",
+      "App Store Optimisation",
+      "Real-Time Sync",
+      "Push Notifications",
+    ],
   },
   {
     num: "03",
@@ -33,7 +45,13 @@ const services = [
     title: "Backend Engineering",
     description:
       "Scalable APIs, robust databases, and cloud infrastructure that won't buckle under pressure. We architect the engine room so your product runs flawlessly at any scale.",
-    features: ["REST & GraphQL APIs", "Database Architecture", "Cloud Deployment", "Microservices", "DevOps & CI/CD"],
+    features: [
+      "REST & GraphQL APIs",
+      "Database Architecture",
+      "Cloud Deployment",
+      "Microservices",
+      "DevOps & CI/CD",
+    ],
   },
   {
     num: "04",
@@ -44,7 +62,13 @@ const services = [
     title: "UI/UX & Brand Strategy",
     description:
       "Design isn't decoration — it's strategy. We map user journeys, prototype interactions, and build visual systems that make your brand unforgettable.",
-    features: ["User Research", "Wireframing & Prototyping", "Design Systems", "Usability Testing", "Brand Identity"],
+    features: [
+      "User Research",
+      "Wireframing & Prototyping",
+      "Design Systems",
+      "Usability Testing",
+      "Brand Identity",
+    ],
   },
   {
     num: "05",
@@ -55,7 +79,13 @@ const services = [
     title: "E-Commerce Solutions",
     description:
       "End-to-end online stores with seamless checkout flows, payment integrations, and inventory management. Built to convert browsers into buyers.",
-    features: ["Store Development", "Payment Gateways", "Inventory Systems", "Analytics Dashboard", "Conversion Optimisation"],
+    features: [
+      "Store Development",
+      "Payment Gateways",
+      "Inventory Systems",
+      "Analytics Dashboard",
+      "Conversion Optimisation",
+    ],
   },
 ];
 
@@ -66,16 +96,32 @@ export const Services = () => {
       className="py-24 md:py-32 relative z-10 bg-gradient-to-b from-[#060a12] via-[#0a0f1a] to-[#060a12] border-t border-white/[0.06] overflow-hidden"
     >
       {/* FA CDN */}
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      />
 
       {/* Ambient glows */}
-      <div className="absolute top-0 right-0 w-[900px] h-[700px] rounded-full blur-[200px] pointer-events-none opacity-30 translate-x-1/3 -translate-y-1/4"
-        style={{ background: "radial-gradient(ellipse, rgba(14,165,233,0.15) 0%, transparent 70%)" }} />
-      <div className="absolute bottom-0 left-0 w-[700px] h-[600px] rounded-full blur-[180px] pointer-events-none opacity-25 -translate-x-1/4 translate-y-1/4"
-        style={{ background: "radial-gradient(ellipse, rgba(255,107,43,0.12) 0%, transparent 70%)" }} />
+      <div
+        className="absolute top-0 right-0 w-[900px] h-[700px] rounded-full blur-[200px] pointer-events-none opacity-30 translate-x-1/3 -translate-y-1/4"
+        style={{
+          background:
+            "radial-gradient(ellipse, rgba(14,165,233,0.15) 0%, transparent 70%)",
+          WebkitBackfaceVisibility: "hidden",
+          transform: "translateZ(0)",
+        }}
+      />
+      <div
+        className="absolute bottom-0 left-0 w-[700px] h-[600px] rounded-full blur-[180px] pointer-events-none opacity-25 -translate-x-1/4 translate-y-1/4"
+        style={{
+          background:
+            "radial-gradient(ellipse, rgba(255,107,43,0.12) 0%, transparent 70%)",
+          WebkitBackfaceVisibility: "hidden",
+          transform: "translateZ(0)",
+        }}
+      />
 
       <div className="max-w-[1280px] mx-auto px-5 sm:px-8 md:px-10 relative z-10">
-
         {/* ══════════════════════════════════════
             HEADER — PROFESSIONAL & BOLD
         ══════════════════════════════════════ */}
@@ -115,7 +161,8 @@ export const Services = () => {
               </h2>
             </div>
             <p className="font-sans text-white/45 text-[15px] leading-[1.85] max-w-sm lg:text-right">
-              End-to-end digital craftsmanship — from pixel-perfect interfaces to rock-solid backend infrastructure.
+              End-to-end digital craftsmanship — from pixel-perfect interfaces
+              to rock-solid backend infrastructure.
             </p>
           </div>
         </motion.div>
@@ -124,7 +171,6 @@ export const Services = () => {
             BENTO GRID — POLISHED LIGHT CARDS
         ══════════════════════════════════════ */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-5">
-
           {/* ── 1. Web Development — FEATURED 8 cols ── */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -135,19 +181,27 @@ export const Services = () => {
               hover:bg-white hover:border-[#0EA5E9]/40 hover:shadow-[0_20px_60px_rgba(14,165,233,0.14)] transition-all duration-500"
           >
             {/* top color bar */}
-            <div className="h-[3px] w-full" style={{ background: services[0].color }} />
+            <div
+              className="h-[3px] w-full"
+              style={{ background: services[0].color }}
+            />
 
             <div className="relative flex flex-col flex-grow p-7 sm:p-9">
               {/* watermark */}
-              <i className={`${services[0].faStyle} ${services[0].faIcon} absolute -right-6 -bottom-5 opacity-[0.045] group-hover:opacity-[0.08] transition-opacity duration-500 pointer-events-none select-none`}
-                style={{ fontSize: "13rem", color: services[0].color }} />
+              <i
+                className={`${services[0].faStyle} ${services[0].faIcon} absolute -right-6 -bottom-5 opacity-[0.045] group-hover:opacity-[0.08] transition-opacity duration-500 pointer-events-none select-none`}
+                style={{ fontSize: "13rem", color: services[0].color }}
+              />
 
               <div className="relative z-10 flex flex-col flex-grow">
                 {/* top row: category + number */}
                 <div className="flex items-center justify-between mb-6">
                   <span
                     className="font-syne text-[10.5px] font-bold uppercase tracking-[0.22em] px-3 py-1.5 rounded-full"
-                    style={{ color: services[0].color, background: `${services[0].color}14` }}
+                    style={{
+                      color: services[0].color,
+                      background: `${services[0].color}14`,
+                    }}
                   >
                     {services[0].category}
                   </span>
@@ -159,9 +213,15 @@ export const Services = () => {
                 {/* icon */}
                 <div
                   className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 border"
-                  style={{ background: `${services[0].color}18`, borderColor: `${services[0].color}30` }}
+                  style={{
+                    background: `${services[0].color}18`,
+                    borderColor: `${services[0].color}30`,
+                  }}
                 >
-                  <i className={`${services[0].faStyle} ${services[0].faIcon} text-xl`} style={{ color: services[0].color }} />
+                  <i
+                    className={`${services[0].faStyle} ${services[0].faIcon} text-xl`}
+                    style={{ color: services[0].color }}
+                  />
                 </div>
 
                 <h3 className="font-syne font-black text-[#0d1117] text-[1.6rem] leading-tight mb-4">
@@ -178,7 +238,10 @@ export const Services = () => {
                       key={i}
                       className="inline-flex items-center gap-1.5 font-sans text-[11.5px] font-medium text-[#0d1117] bg-white border border-[#dde1e7] px-3 py-1 rounded-full shadow-sm"
                     >
-                      <CheckCircle2 size={10} style={{ color: services[0].color }} />
+                      <CheckCircle2
+                        size={10}
+                        style={{ color: services[0].color }}
+                      />
                       {f}
                     </span>
                   ))}
@@ -200,31 +263,51 @@ export const Services = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.65, delay: 0.07, ease: [0.22, 1, 0.36, 1] }}
+            transition={{
+              duration: 0.65,
+              delay: 0.07,
+              ease: [0.22, 1, 0.36, 1],
+            }}
             className="sm:col-span-1 lg:col-span-4 group relative flex flex-col bg-[#f8f9fb] border border-[#e4e7eb] rounded-2xl overflow-hidden
               hover:bg-white hover:border-[#FF6B2B]/40 hover:shadow-[0_20px_60px_rgba(255,107,43,0.12)] transition-all duration-500"
           >
-            <div className="h-[3px] w-full" style={{ background: services[1].color }} />
+            <div
+              className="h-[3px] w-full"
+              style={{ background: services[1].color }}
+            />
             <div className="relative flex flex-col flex-grow p-7">
-              <i className={`${services[1].faStyle} ${services[1].faIcon} absolute -right-4 -bottom-4 opacity-[0.045] group-hover:opacity-[0.08] transition-opacity duration-500 pointer-events-none select-none`}
-                style={{ fontSize: "9rem", color: services[1].color }} />
+              <i
+                className={`${services[1].faStyle} ${services[1].faIcon} absolute -right-4 -bottom-4 opacity-[0.045] group-hover:opacity-[0.08] transition-opacity duration-500 pointer-events-none select-none`}
+                style={{ fontSize: "9rem", color: services[1].color }}
+              />
 
               <div className="relative z-10 flex flex-col flex-grow">
                 <div className="flex items-center justify-between mb-5">
                   <span
                     className="font-syne text-[10.5px] font-bold uppercase tracking-[0.22em] px-3 py-1.5 rounded-full"
-                    style={{ color: services[1].color, background: `${services[1].color}14` }}
+                    style={{
+                      color: services[1].color,
+                      background: `${services[1].color}14`,
+                    }}
                   >
                     {services[1].category}
                   </span>
-                  <span className="font-syne font-black text-[2rem] leading-none opacity-[0.07] select-none">{services[1].num}</span>
+                  <span className="font-syne font-black text-[2rem] leading-none opacity-[0.07] select-none">
+                    {services[1].num}
+                  </span>
                 </div>
 
                 <div
                   className="w-13 h-13 w-12 h-12 rounded-2xl flex items-center justify-center mb-5 border"
-                  style={{ background: `${services[1].color}18`, borderColor: `${services[1].color}30` }}
+                  style={{
+                    background: `${services[1].color}18`,
+                    borderColor: `${services[1].color}30`,
+                  }}
                 >
-                  <i className={`${services[1].faStyle} ${services[1].faIcon} text-lg`} style={{ color: services[1].color }} />
+                  <i
+                    className={`${services[1].faStyle} ${services[1].faIcon} text-lg`}
+                    style={{ color: services[1].color }}
+                  />
                 </div>
 
                 <h3 className="font-syne font-black text-[#0d1117] text-[1.2rem] leading-snug mb-3">
@@ -236,8 +319,14 @@ export const Services = () => {
 
                 <ul className="flex flex-col gap-2.5">
                   {services[1].features.slice(0, 4).map((f, i) => (
-                    <li key={i} className="flex items-center gap-2.5 font-sans text-[12.5px] text-[#555e6d]">
-                      <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: services[1].color }} />
+                    <li
+                      key={i}
+                      className="flex items-center gap-2.5 font-sans text-[12.5px] text-[#555e6d]"
+                    >
+                      <span
+                        className="w-1.5 h-1.5 rounded-full shrink-0"
+                        style={{ background: services[1].color }}
+                      />
                       {f}
                     </li>
                   ))}
@@ -251,28 +340,46 @@ export const Services = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.65, delay: 0.13, ease: [0.22, 1, 0.36, 1] }}
+            transition={{
+              duration: 0.65,
+              delay: 0.13,
+              ease: [0.22, 1, 0.36, 1],
+            }}
             className="sm:col-span-1 lg:col-span-4 group relative flex flex-col bg-[#f8f9fb] border border-[#e4e7eb] rounded-2xl overflow-hidden
               hover:bg-white hover:border-[#A855F7]/40 hover:shadow-[0_20px_60px_rgba(168,85,247,0.12)] transition-all duration-500"
           >
-            <div className="h-[3px] w-full" style={{ background: services[3].color }} />
+            <div
+              className="h-[3px] w-full"
+              style={{ background: services[3].color }}
+            />
             <div className="relative flex flex-col flex-grow p-7">
               <div className="relative z-10 flex flex-col flex-grow">
                 <div className="flex items-center justify-between mb-5">
                   <span
                     className="font-syne text-[10.5px] font-bold uppercase tracking-[0.22em] px-3 py-1.5 rounded-full"
-                    style={{ color: services[3].color, background: `${services[3].color}14` }}
+                    style={{
+                      color: services[3].color,
+                      background: `${services[3].color}14`,
+                    }}
                   >
                     {services[3].category}
                   </span>
-                  <span className="font-syne font-black text-[2rem] leading-none opacity-[0.07] select-none">{services[3].num}</span>
+                  <span className="font-syne font-black text-[2rem] leading-none opacity-[0.07] select-none">
+                    {services[3].num}
+                  </span>
                 </div>
 
                 <div
                   className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 border"
-                  style={{ background: `${services[3].color}18`, borderColor: `${services[3].color}30` }}
+                  style={{
+                    background: `${services[3].color}18`,
+                    borderColor: `${services[3].color}30`,
+                  }}
                 >
-                  <i className={`${services[3].faStyle} ${services[3].faIcon} text-lg`} style={{ color: services[3].color }} />
+                  <i
+                    className={`${services[3].faStyle} ${services[3].faIcon} text-lg`}
+                    style={{ color: services[3].color }}
+                  />
                 </div>
 
                 <h3 className="font-syne font-black text-[#0d1117] text-[1.2rem] leading-snug mb-3">
@@ -287,7 +394,11 @@ export const Services = () => {
                     <span
                       key={i}
                       className="font-sans text-[11px] font-medium px-2.5 py-1 rounded-lg border"
-                      style={{ color: services[3].color, background: `${services[3].color}10`, borderColor: `${services[3].color}25` }}
+                      style={{
+                        color: services[3].color,
+                        background: `${services[3].color}10`,
+                        borderColor: `${services[3].color}25`,
+                      }}
                     >
                       {f}
                     </span>
@@ -302,11 +413,18 @@ export const Services = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.65, delay: 0.19, ease: [0.22, 1, 0.36, 1] }}
+            transition={{
+              duration: 0.65,
+              delay: 0.19,
+              ease: [0.22, 1, 0.36, 1],
+            }}
             className="sm:col-span-2 lg:col-span-8 group relative flex flex-col bg-[#f8f9fb] border border-[#e4e7eb] rounded-2xl overflow-hidden
               hover:bg-white hover:border-[#F59E0B]/40 hover:shadow-[0_20px_60px_rgba(245,158,11,0.12)] transition-all duration-500"
           >
-            <div className="h-[3px] w-full" style={{ background: services[2].color }} />
+            <div
+              className="h-[3px] w-full"
+              style={{ background: services[2].color }}
+            />
             <div className="relative flex flex-col flex-grow p-7 sm:p-9">
               <div className="relative z-10 flex flex-col md:flex-row md:gap-9 flex-grow">
                 {/* left text */}
@@ -314,18 +432,29 @@ export const Services = () => {
                   <div className="flex items-center justify-between mb-5">
                     <span
                       className="font-syne text-[10.5px] font-bold uppercase tracking-[0.22em] px-3 py-1.5 rounded-full"
-                      style={{ color: services[2].color, background: `${services[2].color}14` }}
+                      style={{
+                        color: services[2].color,
+                        background: `${services[2].color}14`,
+                      }}
                     >
                       {services[2].category}
                     </span>
-                    <span className="font-syne font-black text-[2rem] leading-none opacity-[0.07] select-none">{services[2].num}</span>
+                    <span className="font-syne font-black text-[2rem] leading-none opacity-[0.07] select-none">
+                      {services[2].num}
+                    </span>
                   </div>
 
                   <div
                     className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 border"
-                    style={{ background: `${services[2].color}18`, borderColor: `${services[2].color}30` }}
+                    style={{
+                      background: `${services[2].color}18`,
+                      borderColor: `${services[2].color}30`,
+                    }}
                   >
-                    <i className={`${services[2].faStyle} ${services[2].faIcon} text-xl`} style={{ color: services[2].color }} />
+                    <i
+                      className={`${services[2].faStyle} ${services[2].faIcon} text-xl`}
+                      style={{ color: services[2].color }}
+                    />
                   </div>
                   <h3 className="font-syne font-black text-[#0d1117] text-[1.4rem] leading-tight mb-3">
                     {services[2].title}
@@ -335,8 +464,14 @@ export const Services = () => {
                   </p>
                   <ul className="flex flex-col gap-2">
                     {services[2].features.slice(0, 3).map((f, i) => (
-                      <li key={i} className="flex items-center gap-2.5 font-sans text-[12.5px] text-[#555e6d]">
-                        <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: services[2].color }} />
+                      <li
+                        key={i}
+                        className="flex items-center gap-2.5 font-sans text-[12.5px] text-[#555e6d]"
+                      >
+                        <span
+                          className="w-1.5 h-1.5 rounded-full shrink-0"
+                          style={{ background: services[2].color }}
+                        />
                         {f}
                       </li>
                     ))}
@@ -351,25 +486,56 @@ export const Services = () => {
                       <span className="w-2.5 h-2.5 rounded-full bg-[#EF4444]" />
                       <span className="w-2.5 h-2.5 rounded-full bg-[#F59E0B]" />
                       <span className="w-2.5 h-2.5 rounded-full bg-[#22C55E]" />
-                      <span className="ml-2 font-mono text-[10px] text-white/30">system-status.sh</span>
+                      <span className="ml-2 font-mono text-[10px] text-white/30">
+                        system-status.sh
+                      </span>
                     </div>
                     {/* rows */}
                     <div className="p-4 space-y-2.5">
                       {[
-                        { label: "API CLUSTER-01",  status: "OPERATIONAL", dot: "#22C55E" },
-                        { label: "DATA PIPELINE",   status: "STREAMING",   dot: "#0EA5E9" },
-                        { label: "K8S NODE_ALPHA",  status: "STABLE",      dot: "#22C55E" },
-                        { label: "CI/CD PIPELINE",  status: "PASSING",     dot: "#22C55E" },
+                        {
+                          label: "API CLUSTER-01",
+                          status: "OPERATIONAL",
+                          dot: "#22C55E",
+                        },
+                        {
+                          label: "DATA PIPELINE",
+                          status: "STREAMING",
+                          dot: "#0EA5E9",
+                        },
+                        {
+                          label: "K8S NODE_ALPHA",
+                          status: "STABLE",
+                          dot: "#22C55E",
+                        },
+                        {
+                          label: "CI/CD PIPELINE",
+                          status: "PASSING",
+                          dot: "#22C55E",
+                        },
                       ].map((row, i) => (
                         <div
                           key={i}
                           className="flex items-center justify-between px-3.5 py-2.5 rounded-lg"
-                          style={{ borderLeft: `2px solid ${services[2].color}`, background: "rgba(255,255,255,0.04)" }}
+                          style={{
+                            borderLeft: `2px solid ${services[2].color}`,
+                            background: "rgba(255,255,255,0.04)",
+                          }}
                         >
-                          <span className="font-mono text-[10.5px] uppercase tracking-wider text-white/55">{row.label}</span>
+                          <span className="font-mono text-[10.5px] uppercase tracking-wider text-white/55">
+                            {row.label}
+                          </span>
                           <div className="flex items-center gap-1.5">
-                            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: row.dot }} />
-                            <span className="font-mono text-[10px] font-bold uppercase" style={{ color: row.dot }}>{row.status}</span>
+                            <span
+                              className="w-1.5 h-1.5 rounded-full animate-pulse"
+                              style={{ background: row.dot }}
+                            />
+                            <span
+                              className="font-mono text-[10px] font-bold uppercase"
+                              style={{ color: row.dot }}
+                            >
+                              {row.status}
+                            </span>
                           </div>
                         </div>
                       ))}
@@ -385,32 +551,52 @@ export const Services = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.65, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            transition={{
+              duration: 0.65,
+              delay: 0.25,
+              ease: [0.22, 1, 0.36, 1],
+            }}
             className="sm:col-span-2 lg:col-span-12 group relative flex flex-col bg-[#f8f9fb] border border-[#e4e7eb] rounded-2xl overflow-hidden
               hover:bg-white hover:border-[#EF4444]/35 hover:shadow-[0_20px_60px_rgba(239,68,68,0.1)] transition-all duration-500"
           >
-            <div className="h-[3px] w-full" style={{ background: services[4].color }} />
+            <div
+              className="h-[3px] w-full"
+              style={{ background: services[4].color }}
+            />
             <div className="relative flex flex-col md:flex-row md:items-center md:gap-14 p-7 sm:p-9">
-              <i className={`${services[4].faStyle} ${services[4].faIcon} absolute right-6 -bottom-4 opacity-[0.04] group-hover:opacity-[0.07] transition-opacity duration-500 pointer-events-none select-none`}
-                style={{ fontSize: "15rem", color: services[4].color }} />
+              <i
+                className={`${services[4].faStyle} ${services[4].faIcon} absolute right-6 -bottom-4 opacity-[0.04] group-hover:opacity-[0.07] transition-opacity duration-500 pointer-events-none select-none`}
+                style={{ fontSize: "15rem", color: services[4].color }}
+              />
 
               {/* left */}
               <div className="md:w-[36%] shrink-0 relative z-10">
                 <div className="flex items-center justify-between mb-5">
                   <span
                     className="font-syne text-[10.5px] font-bold uppercase tracking-[0.22em] px-3 py-1.5 rounded-full"
-                    style={{ color: services[4].color, background: `${services[4].color}14` }}
+                    style={{
+                      color: services[4].color,
+                      background: `${services[4].color}14`,
+                    }}
                   >
                     {services[4].category}
                   </span>
-                  <span className="font-syne font-black text-[2rem] leading-none opacity-[0.07] select-none">{services[4].num}</span>
+                  <span className="font-syne font-black text-[2rem] leading-none opacity-[0.07] select-none">
+                    {services[4].num}
+                  </span>
                 </div>
 
                 <div
                   className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 border"
-                  style={{ background: `${services[4].color}18`, borderColor: `${services[4].color}30` }}
+                  style={{
+                    background: `${services[4].color}18`,
+                    borderColor: `${services[4].color}30`,
+                  }}
                 >
-                  <i className={`${services[4].faStyle} ${services[4].faIcon} text-xl`} style={{ color: services[4].color }} />
+                  <i
+                    className={`${services[4].faStyle} ${services[4].faIcon} text-xl`}
+                    style={{ color: services[4].color }}
+                  />
                 </div>
                 <h3 className="font-syne font-black text-[#0d1117] text-[1.5rem] leading-tight mb-4">
                   {services[4].title}
@@ -431,16 +617,21 @@ export const Services = () => {
                       className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
                       style={{ background: `${services[4].color}14` }}
                     >
-                      <i className={`${services[4].faStyle} ${services[4].faIcon} text-[10px]`} style={{ color: services[4].color }} />
+                      <i
+                        className={`${services[4].faStyle} ${services[4].faIcon} text-[10px]`}
+                        style={{ color: services[4].color }}
+                      />
                     </div>
-                    <span className="font-sans text-[13px] font-medium text-[#0d1117]">{f}</span>
+                    <span className="font-sans text-[13px] font-medium text-[#0d1117]">
+                      {f}
+                    </span>
                   </div>
                 ))}
               </div>
             </div>
           </motion.div>
-
-        </div>{/* end grid */}
+        </div>
+        {/* end grid */}
 
         {/* ══════════════════════════════════════
             BOTTOM CTA BANNER
@@ -458,9 +649,12 @@ export const Services = () => {
               <Zap size={19} className="text-[#ff6b35]" />
             </div>
             <div>
-              <p className="font-syne font-black text-[#0d1117] text-[16px] mb-1">Not sure where to start?</p>
+              <p className="font-syne font-black text-[#0d1117] text-[16px] mb-1">
+                Not sure where to start?
+              </p>
               <p className="font-sans text-[#555e6d] text-[13.5px] leading-[1.7]">
-                Tell us about your project. We'll map out the right stack, timeline &amp; budget — no strings attached.
+                Tell us about your project. We'll map out the right stack,
+                timeline &amp; budget — no strings attached.
               </p>
             </div>
           </div>
@@ -475,7 +669,10 @@ export const Services = () => {
             >
               <MessageCircle size={14} />
               Chat on WhatsApp
-              <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform" />
+              <ArrowRight
+                size={13}
+                className="group-hover:translate-x-0.5 transition-transform"
+              />
             </a>
             <a
               href="#contact"
@@ -485,7 +682,6 @@ export const Services = () => {
             </a>
           </div>
         </motion.div>
-
       </div>
     </section>
   );

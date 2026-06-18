@@ -25,7 +25,7 @@ export const Portfolio = () => {
       className="py-28 relative z-10 bg-[#0A1628] border-t border-white/5 overflow-hidden"
     >
       {/* Background Grid Pattern */}
-      <div 
+      <div
         className="absolute inset-0 pointer-events-none opacity-30"
         style={{
           backgroundImage: `
@@ -33,15 +33,35 @@ export const Portfolio = () => {
             linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px)
           `,
           backgroundSize: "50px 50px",
-          maskImage: "radial-gradient(circle at center, black 30%, transparent 80%)",
-          WebkitMaskImage: "radial-gradient(circle at center, black 30%, transparent 80%)"
+          maskImage:
+            "radial-gradient(circle at center, black 30%, transparent 80%)",
+          WebkitMaskImage:
+            "radial-gradient(circle at center, black 30%, transparent 80%)",
         }}
       />
 
       {/* Overlapping Premium Glows */}
-      <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-brand-orange/[0.05] rounded-full blur-[130px] pointer-events-none -translate-y-1/2 translate-x-1/4" />
-      <div className="absolute bottom-0 left-[-100px] w-[500px] h-[500px] bg-[#6366F1]/[0.03] rounded-full blur-[120px] pointer-events-none translate-y-1/3" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[#0A1628] rounded-full blur-[100px] pointer-events-none" />
+      <div
+        className="absolute top-0 right-0 w-[550px] h-[550px] bg-brand-orange/[0.05] rounded-full blur-[130px] pointer-events-none -translate-y-1/2 translate-x-1/4"
+        style={{
+          WebkitBackfaceVisibility: "hidden",
+          transform: "translateZ(0)",
+        }}
+      />
+      <div
+        className="absolute bottom-0 left-[-100px] w-[500px] h-[500px] bg-[#6366F1]/[0.03] rounded-full blur-[120px] pointer-events-none translate-y-1/3"
+        style={{
+          WebkitBackfaceVisibility: "hidden",
+          transform: "translateZ(0)",
+        }}
+      />
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[#0A1628] rounded-full blur-[100px] pointer-events-none"
+        style={{
+          WebkitBackfaceVisibility: "hidden",
+          transform: "translateZ(0)",
+        }}
+      />
 
       <div className="max-w-[1200px] mx-auto px-6 md:px-10 relative z-10">
         {/* Header */}
@@ -55,8 +75,14 @@ export const Portfolio = () => {
           <div>
             {/* Label with line accent */}
             <div className="inline-flex items-center gap-2.5 mb-5">
-              <span className="block w-6 h-[2px] rounded-full" style={{ background: "#FF6B2B" }} />
-              <span className="font-syne text-[10.5px] uppercase tracking-[0.28em] font-bold" style={{ color: "#FF6B2B" }}>
+              <span
+                className="block w-6 h-[2px] rounded-full"
+                style={{ background: "#FF6B2B" }}
+              />
+              <span
+                className="font-syne text-[10.5px] uppercase tracking-[0.28em] font-bold"
+                style={{ color: "#FF6B2B" }}
+              >
                 Portfolio
               </span>
             </div>
@@ -68,7 +94,8 @@ export const Portfolio = () => {
               Our{" "}
               <span
                 style={{
-                  background: "linear-gradient(135deg, #FF6B2B 0%, #FFA07A 100%)",
+                  background:
+                    "linear-gradient(135deg, #FF6B2B 0%, #FFA07A 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -91,7 +118,10 @@ export const Portfolio = () => {
             style={{ color: "#FF6B2B" }}
           >
             View all projects
-            <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-300" />
+            <ArrowRight
+              size={13}
+              className="group-hover:translate-x-1 transition-transform duration-300"
+            />
           </a>
         </motion.div>
 
@@ -107,25 +137,13 @@ export const Portfolio = () => {
                 delay: index * 0.12,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="group flex flex-col rounded-2xl overflow-hidden cursor-pointer bg-white"
-              style={{
-                border: "1px solid rgba(0,0,0,0.07)",
-                boxShadow: "0 2px 16px rgba(0,0,0,0.08)",
-                transition: "all 0.35s cubic-bezier(0.22,1,0.36,1)",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-7px)";
-                e.currentTarget.style.boxShadow = "0 24px 56px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,107,43,0.25)";
-                e.currentTarget.style.borderColor = "rgba(255,107,43,0.3)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "0 2px 16px rgba(0,0,0,0.08)";
-                e.currentTarget.style.borderColor = "rgba(0,0,0,0.07)";
-              }}
+              className="group flex flex-col rounded-2xl overflow-hidden cursor-pointer bg-white border border-black/5 shadow-md hover:-translate-y-1.5 hover:shadow-2xl hover:border-brand-orange/30 transition-all duration-300"
             >
               {/* Image with overlays */}
-              <div className="relative w-full shrink-0 overflow-hidden" style={{ height: "220px" }}>
+              <div
+                className="relative w-full shrink-0 overflow-hidden"
+                style={{ height: "220px" }}
+              >
                 <img
                   src={project.image}
                   alt={project.title}
@@ -134,7 +152,10 @@ export const Portfolio = () => {
                 {/* Bottom scrim for readability */}
                 <div
                   className="absolute inset-0 pointer-events-none"
-                  style={{ background: "linear-gradient(to top, rgba(6,14,28,0.78) 0%, rgba(6,14,28,0.15) 50%, transparent 100%)" }}
+                  style={{
+                    background:
+                      "linear-gradient(to top, rgba(6,14,28,0.78) 0%, rgba(6,14,28,0.15) 50%, transparent 100%)",
+                  }}
                 />
                 {/* Category badge — floated on image bottom */}
                 {project.category && (
@@ -208,18 +229,11 @@ export const Portfolio = () => {
                   </a>
 
                   {/* Arrow icon pill */}
-                  <div
-                    className="flex items-center justify-center rounded-full transition-all duration-300"
-                    style={{
-                      width: "30px",
-                      height: "30px",
-                      background: "rgba(255,107,43,0.1)",
-                      border: "1px solid rgba(255,107,43,0.2)",
-                    }}
-                    onMouseEnter={(e) => { e.currentTarget.style.background = "#FF6B2B"; e.currentTarget.style.borderColor = "#FF6B2B"; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(255,107,43,0.1)"; e.currentTarget.style.borderColor = "rgba(255,107,43,0.2)"; }}
-                  >
-                    <ArrowRight size={12} style={{ color: "#FF6B2B" }} />
+                  <div className="flex items-center justify-center rounded-full transition-all duration-300 w-[30px] h-[30px] bg-brand-orange/10 border border-brand-orange/20 group-hover/link:bg-brand-orange group-hover/link:border-brand-orange">
+                    <ArrowRight
+                      size={12}
+                      className="text-brand-orange group-hover/link:text-white transition-colors"
+                    />
                   </div>
                 </div>
               </div>
@@ -237,27 +251,10 @@ export const Portfolio = () => {
         >
           <a
             href="#contact"
-            className="group inline-flex items-center gap-3 font-sans font-semibold text-white transition-all duration-300"
+            className="group inline-flex items-center gap-3 font-sans font-semibold text-white transition-all duration-300 text-[13px] px-9 py-3.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] hover:bg-gradient-to-br hover:from-[#FF6B2B] hover:to-[#e85a1f] hover:border-brand-orange hover:shadow-[0_12px_40px_rgba(255,107,43,0.4)] hover:-translate-y-0.5"
             style={{
-              fontSize: "13px",
-              padding: "14px 36px",
-              borderRadius: "999px",
-              border: "1px solid rgba(255,255,255,0.12)",
-              background: "rgba(255,255,255,0.05)",
-              backdropFilter: "blur(12px)",
-              boxShadow: "inset 0 1px 0 rgba(255,255,255,0.08)",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = "linear-gradient(135deg, #FF6B2B, #e85a1f)";
-              e.currentTarget.style.borderColor = "#FF6B2B";
-              e.currentTarget.style.boxShadow = "0 12px 40px rgba(255,107,43,0.4), 0 0 0 1px rgba(255,107,43,0.4)";
-              e.currentTarget.style.transform = "translateY(-2px)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = "rgba(255,255,255,0.05)";
-              e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)";
-              e.currentTarget.style.boxShadow = "inset 0 1px 0 rgba(255,255,255,0.08)";
-              e.currentTarget.style.transform = "translateY(0)";
+              WebkitBackfaceVisibility: "hidden",
+              transform: "translateZ(0)",
             }}
           >
             See Full Portfolio
