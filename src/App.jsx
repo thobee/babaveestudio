@@ -9,55 +9,9 @@ import { Testimonials } from "./components/sections/Testimonials";
 import { FAQ } from "./components/sections/FAQ";
 import { Contact } from "./components/sections/Contact";
 import { MessageCircle } from "lucide-react";
-import { useEffect, useRef } from "react";
 import { CTABanner } from "./components/sections/Ctabanner";
-import Lenis from "lenis";
 
 function App() {
-  const lenisRef = useRef(null);
-
-  useEffect(() => {
-    // ── Initialise Lenis smooth scroll ──
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smooth: true,
-      smoothTouch: false, // native on mobile
-    });
-
-    lenisRef.current = lenis;
-
-    // RAF loop — drive Lenis every frame
-    let rafId;
-    function raf(time) {
-      lenis.raf(time);
-      rafId = requestAnimationFrame(raf);
-    }
-    rafId = requestAnimationFrame(raf);
-
-    // Intercept anchor clicks so they scroll through Lenis
-    function handleAnchorClick(e) {
-      const href = this.getAttribute("href");
-      if (href && href.startsWith("#") && href.length > 1) {
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) lenis.scrollTo(target, { offset: 0 });
-      }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach((a) =>
-      a.addEventListener("click", handleAnchorClick)
-    );
-
-    return () => {
-      cancelAnimationFrame(rafId);
-      lenis.destroy();
-      document.querySelectorAll('a[href^="#"]').forEach((a) =>
-        a.removeEventListener("click", handleAnchorClick)
-      );
-    };
-  }, []);
-
   return (
     <div className="min-h-screen bg-brand-blue text-brand-white selection:bg-brand-orange/30">
       <Navbar />
@@ -65,14 +19,13 @@ function App() {
       <main>
         <Hero />
         <WhyUs />
-      
+
         <Services />
         <TechStack />
 
         <Portfolio />
 
         <Testimonials />
-
 
         <FAQ />
 
