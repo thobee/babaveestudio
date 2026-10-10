@@ -1,57 +1,118 @@
-# BabaVee Studio Agency Website
+# BabaVee Studio
 
-A complete, production-ready single-page agency website designed and built for BabaVee Studio. Built with modern web technologies emphasizing performance, clean code, and premium aesthetic design.
+BabaVee Studio is a modern agency website for a creative technology studio offering web development, mobile app development, tech content, and digital products.
 
-## Features
-- **Responsive Layout**: Mobile-first design that scales perfectly across devices.
-- **Dynamic Animations**: Smooth, high-performance scroll and layout animations using Framer Motion.
-- **Premium UI**: Glassmorphism, tailored typography (Syne, DM Sans, JetBrains Mono), and a distinctive dark/orange brand theme.
-- **Working Contact Form**: Integrated with EmailJS for serverless contact requests.
+The site is designed as a premium digital presence for showcasing services, selected work, and a clear path for prospective clients to start a project.
 
-## Tech Stack
-- **Framework**: React 18 / Vite
-- **Styling**: Tailwind CSS v3
-- **Animations**: Framer Motion
-- **Icons**: Lucide React
-- **Email Service**: EmailJS
+## Live demo
 
-## Setup Instructions
+[Visit the live website](https://babaveestudio.vercel.app/)
 
-### 1. Prerequisite
-Ensure you have Node.js installed (v18 or higher recommended).
+## Highlights
 
-### 2. Install Dependencies
+- Responsive, mobile-first layout
+- Dark and orange visual identity with glassmorphism-inspired UI
+- Animated sections and interactions powered by Framer Motion
+- Services, portfolio, testimonials, pricing, FAQ, and contact sections
+- Contact form integration through EmailJS
+- Production build configuration with Vite
+
+## Tech stack
+
+- React 19
+- Vite
+- Tailwind CSS 3
+- Framer Motion
+- Lucide React
+- EmailJS
+
+## Getting started
+
+### Prerequisites
+
+- Node.js 18 or newer
+- npm
+
+### Installation
+
 ```bash
+git clone https://github.com/thobee/babaveestudio.git
+cd babaveestudio
 npm install
 ```
 
-### 3. Start Development Server
+### Configure environment variables
+
+Copy the example environment file:
+
+```bash
+cp .env.example .env
+```
+
+Then add your EmailJS values to `.env`:
+
+```env
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+```
+
+These values are available from your [EmailJS dashboard](https://dashboard.emailjs.com/). Do not commit your personal `.env` file.
+
+### Run locally
+
 ```bash
 npm run dev
 ```
-Navigate to `http://localhost:5173/` in your browser.
 
-### 4. Build for Production
-```bash
-npm run build
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+## Available scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the Vite development server |
+| `npm run build` | Build the site for production |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint` | Run ESLint checks |
+
+## EmailJS contact form
+
+The contact form uses EmailJS so messages can be sent without a custom backend. To enable it:
+
+1. Create an EmailJS account.
+2. Add an email service and create an email template.
+3. Add the service ID, template ID, and public key to `.env`.
+4. Ensure the template supports these form fields:
+   - `name`
+   - `email`
+   - `projectType`
+   - `budget`
+   - `message`
+
+The form implementation is located in `src/components/sections/Contact.jsx`.
+
+## Project structure
+
+```text
+src/
+├── components/       # Layout, sections, and reusable UI components
+├── data/              # Services, projects, FAQs, and testimonials
+├── hooks/             # Reusable React hooks
+├── assets/            # Local image and icon assets
+├── App.jsx            # Main application component
+└── main.jsx          # Application entry point
 ```
-The optimized bundle will be generated in the `dist` folder.
 
-## EmailJS Configuration
-To enable the contact form to actually funnel emails to your inbox, you must set up EmailJS:
+## Project status
 
-1. Create a free account at [EmailJS](https://www.emailjs.com/)
-2. In the EmailJS dashboard, add a new **Email Service** (e.g., Gmail) and note your **Service ID**.
-3. Create an **Email Template** and define the layout. Your contact form sends the following variables:
-   - `{{name}}`
-   - `{{email}}`
-   - `{{projectType}}`
-   - `{{budget}}`
-   - `{{message}}`
-4. Note your **Template ID**.
-5. Get your **Public Key** from the Account section in EmailJS.
-6. Open `src/components/sections/Contact.jsx`.
-7. Uncomment the `emailjs.sendForm` snippet inside the `handleSubmit` function.
-8. Replace `YOUR_SERVICE_ID`, `YOUR_TEMPLATE_ID`, and `YOUR_PUBLIC_KEY` with the values you noted above.
+The core agency website is implemented and deployed. Future improvements may include:
 
-*Built by Antigravity*
+- Connecting the contact form to a production email workflow
+- Adding a dedicated case-study page for each project
+- Improving accessibility and automated test coverage
+- Adding a content management workflow for services and portfolio items
+
+## License
+
+No open-source license has been added yet. All rights reserved unless otherwise stated.
