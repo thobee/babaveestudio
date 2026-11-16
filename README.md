@@ -10,12 +10,20 @@ The site is designed as a premium digital presence for showcasing services, sele
 
 ## Highlights
 
-- Responsive, mobile-first layout
-- Dark and orange visual identity with glassmorphism-inspired UI
-- Animated sections and interactions powered by Framer Motion
-- Services, portfolio, testimonials, pricing, FAQ, and contact sections
-- Contact form integration through EmailJS
-- Production build configuration with Vite
+- Responsive, mobile-first layout (checked at 320, 375, 768, 1024 and 1440px)
+- Warm near-black and orange visual identity, Plus Jakarta Sans
+- Entrance and scroll-reveal animations with Framer Motion (play once, respect reduced motion)
+- Work, services, about, tech stack, FAQ and contact sections
+- Contact form with inline validation, sent through EmailJS
+- Local WebP project screenshots with `srcset`, local tech logos, share image at `public/og-image.jpg`
+
+## Editing content
+
+- Projects: `src/data/projects.js` (images in `public/images/work/<name>-<width>.webp`)
+- Services: `src/data/services.js`
+- FAQ: `src/data/faq.js`
+- Contact details, nav links and socials: `src/data/site.js`
+- Testimonials: `src/data/testimonials.js` — hidden until real client quotes are added; set `SHOW_TESTIMONIALS = true` to show them
 
 ## Tech stack
 

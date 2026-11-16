@@ -7,17 +7,17 @@ export const faqs = [
   {
     id: 2,
     question: 'What is the pricing for your web development services?',
-    answer: 'Our pricing is project-based and depends on factors such as the site\'s complexity, number of pages, and required features. We offer affordable packages to ensure we work with your budget. We\'ve also got discounts running all year long. Please check out our pricing page or contact us for a customized quote!'
+    answer: 'Our pricing is project-based and depends on factors such as the site\'s complexity, number of pages, and required features. We offer affordable packages to ensure we work with your budget. We\'ve also got discounts running all year long. Contact us for a customized quote!'
   },
   {
     id: 3,
     question: 'What types of websites do you create?',
-    answer: 'We build all any type of websites, including Corporate, VTU, Real estate, Fintech, Educational, Classified, E-Commerce, Blogs, Investment, Banking, and many more. Whatever your needs are, we create websites that suits your requirements and taste.'
+    answer: 'We build all types of websites, including Corporate, VTU, Real estate, Fintech, Educational, Classified, E-Commerce, Blogs, Investment, Banking, and many more. Whatever your needs are, we create websites that suit your requirements and taste.'
   },
   {
     id: 4,
     question: 'What are other services that you offer?',
-    answer: 'As the number 1 web design company in Lagos & Abuja, we also offer other digital services: SEO, Shopify Store Design, Graphics Design, Mobile App Development, Social Media Management, Content Management, e.t.c'
+    answer: 'Beyond websites, we also offer other digital services: SEO, Shopify Store Design, Graphics Design, Mobile App Development, Social Media Management, Content Management, e.t.c'
   },
   {
     id: 5,
@@ -27,6 +27,6 @@ export const faqs = [
   {
     id: 6,
     question: 'What do you need from me to get started?',
-    answer: 'To get started, we\'ll need details about your business operations, content (text, images), and any design preferences you have. If you already have a domain and hosting, great! If not, we can assist you purchase them. Once we have these, we\'ll begin the development process right away!'
+    answer: 'To get started, we\'ll need details about your business operations, content (text, images), and any design preferences you have. If you already have a domain and hosting, great! If not, we can help you purchase them. Once we have these, we\'ll begin the development process right away!'
   }
 ];

@@ -1,60 +1,51 @@
-import { Navbar } from "./components/layout/Navbar";
-import { Footer } from "./components/layout/Footer";
-import { Hero } from "./components/sections/Hero";
-import { Services } from "./components/sections/Services";
-import { WhyUs } from "./components/sections/WhyUs";
-import { TechStack } from "./components/sections/TechStack";
-import { Portfolio } from "./components/sections/Portfolio";
-import { Testimonials } from "./components/sections/Testimonials";
-import { FAQ } from "./components/sections/FAQ";
-import { Contact } from "./components/sections/Contact";
-import { MessageCircle } from "lucide-react";
-import { CTABanner } from "./components/sections/Ctabanner";
+import { MotionConfig } from "framer-motion";
+import { Navbar } from "./components/Navbar";
+import { Hero } from "./components/Hero";
+import { Work } from "./components/Work";
+import { Services } from "./components/Services";
+import { About } from "./components/About";
+import { TechStack } from "./components/TechStack";
+import { Testimonials } from "./components/Testimonials";
+import { FAQ } from "./components/FAQ";
+import { Contact } from "./components/Contact";
+import { Footer } from "./components/Footer";
+import { WhatsAppIcon } from "./components/ui";
+import { WHATSAPP } from "./data/site";
 
 function App() {
   return (
-    <div className="min-h-screen bg-brand-blue text-brand-white selection:bg-brand-orange/30">
+    <MotionConfig reducedMotion="user">
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-orange focus:px-5 focus:py-3 focus:font-semibold focus:text-ink"
+      >
+        Skip to content
+      </a>
       <Navbar />
 
-      <main>
+      <main id="main">
         <Hero />
-        <WhyUs />
-
+        <Work />
         <Services />
+        <About />
         <TechStack />
-
-        <Portfolio />
-
         <Testimonials />
-
         <FAQ />
-
         <Contact />
       </main>
-      <CTABanner />
+
       <Footer />
 
-      {/* Floating WhatsApp Button */}
       <a
-        href="https://wa.me/2348102877413"
+        href={WHATSAPP}
         target="_blank"
-        rel="noreferrer"
-        className="fixed bottom-8 right-8 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:scale-110 transition-transform focus:outline-none"
-        aria-label="Chat on WhatsApp"
+        rel="noopener noreferrer"
+        aria-label="Chat with BabaVee Studio on WhatsApp"
+        className="fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-5 z-40 grid size-14 place-items-center rounded-full bg-[#25D366] text-ink shadow-[0_1px_2px_rgb(0_0_0/0.3),0_10px_24px_-6px_rgb(37_211_102/0.5)] transition-[scale,box-shadow] duration-200 hover:scale-105 active:scale-[0.96]"
       >
-        <style>{`
-          @keyframes pulse-ring {
-            0% { transform: scale(1); opacity: 0.8; }
-            100% { transform: scale(1.5); opacity: 0; }
-          }
-          .animate-pulse-ring {
-            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
-          }
-        `}</style>
-        <div className="absolute inset-0 rounded-full bg-green-500 animate-pulse-ring"></div>
-        <MessageCircle size={28} className="relative z-10" />
+        <WhatsAppIcon size={28} />
       </a>
-    </div>
+    </MotionConfig>
   );
 }
 

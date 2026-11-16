@@ -1,28 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   html {
-    /* scroll-behavior: smooth — handled by Lenis */
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
   }
 
   body {
-    @apply bg-brand-blue text-brand-white font-sans antialiased overflow-x-hidden;
+    @apply bg-ink font-sans text-stone-100 antialiased;
+    overflow-x: clip;
     text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-syne font-bold;
   }
 
-  /* Respect user's reduced-motion preference */
+  h1, h2, h3, h4 {
+    @apply font-bold tracking-tight text-white;
+    text-wrap: balance;
+  }
+
+  p, li, dd {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: rgb(255 107 43 / 0.35);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid #FF6B2B;
+    outline-offset: 3px;
+  }
+
+  /* consistent image edge on dark surfaces */
+  img {
+    outline: 1px solid oklch(1 0 0 / 0.1);
+    outline-offset: -1px;
+  }
+  img.no-outline {
+    outline: none;
+  }
+
   @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
     *, *::before, *::after {
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
@@ -31,17 +55,74 @@
   }
 }
 
-@layer utilities {
-  .bg-noise {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    opacity: 0.15;
-    pointer-events: none;
-    position: absolute;
-    inset: 0;
-    z-index: 0;
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-page px-4 sm:px-6 lg:px-8;
   }
 
-  .glass-card {
-    @apply bg-brand-card/80 backdrop-blur-md border border-white/10 shadow-xl;
+  .section {
+    @apply py-20 sm:py-24 lg:py-32;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-orange;
+  }
+
+  .h2 {
+    @apply text-[2rem] leading-[1.1] sm:text-[2.5rem] lg:text-[3rem];
+    letter-spacing: -0.03em;
+  }
+
+  .lead {
+    @apply text-base leading-relaxed text-mute sm:text-lg;
+  }
+
+  .btn {
+    @apply relative inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full px-6 text-[15px] font-semibold;
+    transition-property: background-color, color, box-shadow, scale;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .btn:active {
+    scale: 0.96;
+  }
+  .btn-primary {
+    @apply btn bg-orange text-ink shadow-cta hover:bg-orange-400;
+  }
+  .btn-ghost {
+    @apply btn bg-white/[0.04] text-white hover:bg-white/[0.09];
+    box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.14);
+  }
+
+  .card {
+    @apply rounded-3xl bg-ink-800 shadow-card;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-full bg-white/[0.05] px-3 py-1 text-[13px] font-medium text-stone-300;
+    box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.07);
+  }
+
+  /* sliding underline for nav links */
+  .link-underline {
+    @apply relative;
+  }
+  .link-underline::after {
+    content: "";
+    @apply absolute bottom-2 left-3 right-3 h-[2px] origin-right scale-x-0 rounded-full bg-orange;
+    transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .link-underline:hover::after,
+  .link-underline[aria-current="true"]::after {
+    @apply origin-left scale-x-100;
+  }
+
+  /* slow settle-in zoom on hero screenshots */
+  .slow-zoom {
+    animation: slow-zoom 14s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  @keyframes slow-zoom {
+    from { transform: scale(1.1); }
+    to { transform: scale(1); }
   }
 }
